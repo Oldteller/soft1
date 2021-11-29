@@ -38,7 +38,7 @@ function MAIL(){
           'κατατέθηκε έμβασμα στον λογαριασμό σας με IBAN  ' +  TRDTLINES.TRDBANKACC_TRDBANKACC_IBAN.toString().substr(0, 4)+'-'+TRDTLINES.TRDBANKACC_TRDBANKACC_IBAN.toString().substr(4, 6)+'-'+TRDTLINES.TRDBANKACC_TRDBANKACC_IBAN.toString().substr(10, 3)  + '<BR>' +
           'από ' +' '+ BFNSUPDOC.TRDR_BANKACC_NAME + '<br>'+
 					' το ποσό των <strong>' + X.FORMATFLOAT(TRDTLINES.LINEVAL,2) +' €</strong><BR><BR>'
-					+'Με την αιτιολογία ' +TRDTLINES.TRDR_SUPPLIER_NAME +'/ΕΛΑΝΚΟ/ΕΞΟΦΛ./'+ TRDTLINES.COMMENTS +' '+BFNSUPDOC.CMPFINCODE+ '<BR>';
+					+'Με την αιτιολογία ' +TRDTLINES.TRDR_SUPPLIER_NAME +'/ΕΞΟΦΛ./'+ TRDTLINES.COMMENTS +' '+BFNSUPDOC.CMPFINCODE+ '<BR>';
 					'<BR>'+'<BR>';
 
         var myQMails = 'SELECT email from trdr where trdr=' + TRDTLINES.TRDR;
@@ -50,7 +50,7 @@ function MAIL(){
 
         strSubject = 'ΕΝΗΜΕΡΩΣΗ ΕΙΣΠΡΑΞΗΣ | ' + TRDTLINES.TRDR_SUPPLIER_CODE + ' ' + TRDTLINES.TRDR_SUPPLIER_NAME +' | ' +BFNSUPDOC.CMPFINCODE ;
         strBodyPlain = '';
-        strFromName = 'ELANCO transactions';
+        strFromName = 'transactions';
 
         strBodyHTML = strBodyHeader  + footer;
         strAttachment = '';
